@@ -25,7 +25,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: puzzlepop2:ai-server
+          tags: ${{ secrets.DOCKER_USERNAME }}/puzzlepop2:ai-server
 
   deploy:
     runs-on: ubuntu-22.04-arm
