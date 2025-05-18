@@ -48,3 +48,18 @@ async def nsfw_check(file: UploadFile = File(...)):
     except Exception as e:
         print(e)
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/image-upscale")
+async def image_upscale(file: UploadFile = File(...)):
+    try:
+        
+        return {
+            "filename": file.filename,
+            "content_type": file.content_type,
+            "size": file.size,
+        }
+
+    except Exception as e:
+        print(e)
+        raise HTTPException(status_code=500, detail=str(e))
